@@ -28,7 +28,6 @@ class CocktailAdapter (val cocktailResponse: CocktailResponse): RecyclerView.Ada
             setOnClickListener {
 
             }
-            // Toast.makeText(context, "${list.strDrink}", Toast.LENGTH_SHORT).show()
 
             Glide.with(context).load(list.strDrinkThumb).placeholder(R.drawable.ic_launcher_background).into(image)
 

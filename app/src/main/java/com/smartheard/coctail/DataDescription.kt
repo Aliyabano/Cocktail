@@ -24,8 +24,8 @@ class DataDescription : AppCompatActivity() {
 
         val cocktailData = intent.getStringExtra("cocktailData")
 
-        val cocktailList="Cocktail"
-        getCocktail(cocktailList)
+//        val cocktailList="Cocktail"
+//        getCocktail(cocktailList)
 
         val list = "$cocktailData"
         getOrdinaryDrink(list)
@@ -59,28 +59,28 @@ class DataDescription : AppCompatActivity() {
 
     }
 
+//
+//    private fun getCocktail(cocktailList: String) {
+//        val progressBar = ProgressDialog(this)
+//        lifecycleScope.launchWhenStarted {
+//            mainVM.cocktail(cocktailList).collect {
+//                when (it) {
+//                    is ApiResponse.Failure -> {
+//                        Log.e("DataDescription", "${it.msg}")
+//                        progressBar.dismiss()
+//                    }
+//                    ApiResponse.Loading -> {
+//                        progressBar.show()
+//                    }
+//                    is ApiResponse.Success -> {
+//                        progressBar.dismiss()
+//                        val adapter = CocktailAdapter(it.data!!)
+//                        rv_data_des.adapter = adapter
+//                        Log.e("DataCocktail", "${it.data!!.drinks}")
+//                    }
+//                }
+//            }
+//        }
 
-    private fun getCocktail(cocktailList: String) {
-        val progressBar = ProgressDialog(this)
-        lifecycleScope.launchWhenStarted {
-            mainVM.cocktail(cocktailList).collect {
-                when (it) {
-                    is ApiResponse.Failure -> {
-                        Log.e("DataDescription", "${it.msg}")
-                        progressBar.dismiss()
-                    }
-                    ApiResponse.Loading -> {
-                        progressBar.show()
-                    }
-                    is ApiResponse.Success -> {
-                        progressBar.dismiss()
-                        val adapter = CocktailAdapter(it.data!!)
-                        rv_data_des.adapter = adapter
-                        Log.e("DataCocktail", "${it.data!!.drinks}")
-                    }
-                }
-            }
-        }
-
-    }
+  //  }
 }
